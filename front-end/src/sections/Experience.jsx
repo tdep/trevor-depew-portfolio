@@ -19,7 +19,7 @@ const Experience = () => {
   return (
     <div id="experience-container">
       <div id="side-menu">
-        <a className="tablinks" onClick={(e) => handleCard(e, "flatiron")}>Flatiron School</a>
+        <a className="tablinks active" onClick={(e) => handleCard(e, "flatiron")}>Flatiron School</a>
         <a className="tablinks" onClick={(e) => handleCard(e, "piano")}>Piano Technician</a>
         <a className="tablinks" onClick={(e) => handleCard(e, "masters")}>CUNY Brooklyn College</a>
         <a className="tablinks" onClick={(e) => handleCard(e, "roli")}>ROLI</a>
@@ -28,11 +28,11 @@ const Experience = () => {
         <div id="flatiron" className="experience-cards">
           <div className="photo-blurb">
             <img id="flatiron-logo"></img>
-            <p id="flatiron-blurb" className="experience-blurbs"> As a student, studied front and back-end development
-            in <span id="languages">JavaScript</span>, <span id="languages">React</span>, 
-            <span id="languages"> Ruby on Rails</span>, and <span id="languages">Python / Flask</span>. Designed, wireframed, 
-            and developed several applications both individually and as part of a team using combinations of the aforementioned
-            languages and existing or custom APIs.<br/><br/>
+            <p id="flatiron-blurb" className="experience-blurbs"> As a student, studied front and back-end development in 
+            <span className="languages"> JavaScript</span>, <span className="languages">React</span>, 
+            <span className="languages"> Ruby on Rails</span>, and <span className="languages">Python / Flask</span>. 
+            Designed, wireframed, and developed several applications both individually and as part of a team using 
+            combinations of the aforementioned languages and existing or custom APIs.<br/><br/>
 
             Assisted other students with their studies and projects helping to ensure the class as a whole was able to 
             achieve the most out of the time on and off campus. This included leading study and review sessions outside 

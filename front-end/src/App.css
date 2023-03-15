@@ -237,6 +237,7 @@ a {
 #tech-container ul {
   font-size: 3vh;
   column-count: 2;
+  color: #23ddff;
   justify-content: center;
   text-align: center;
   list-style-type: none;
@@ -246,13 +247,14 @@ a {
   margin: 0 1vw 0 1vw;
   width: 10vw;
   text-align: left;
-  padding-left: 0.5vw;
+  padding: 0 0 0 0.5vw;
 }
 
 #tech-container li:hover {
   color: #ffe21b;
-  opacity: 70%;
+  opacity: 90%;
   transition: 0.3s;
+  cursor: url(icons8-rubber-64.png), pointer;
 }
 
 #tech-container li::marker {
@@ -291,6 +293,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+  transition: 0.5s;
 }
 
 #side-menu a {
@@ -298,7 +301,7 @@ a {
   text-align: right;
   color: #bbb;
   width: 100%;
-  border-left: 1px dashed #23ddff;
+  border-left: 0.2vw dashed #23ddff;
   box-sizing: border-box;
   cursor: pointer;
   padding: 15% 5% 2% 0;
@@ -309,12 +312,13 @@ a {
 #side-menu a:hover {
   background: #1a1c1d;
   color: #aff2fe;
-  border-left: 2px solid #23ddff;
+  border-left: 0.2vw solid #23ddff;
   transition: 0.5s;
 }
 
 #side-menu a.active {
   background: #1a1c1d;
+  color: #ffe21b;
 }
 
 #experience-text {
@@ -346,7 +350,50 @@ a {
   100% {opacity: 1;}
 }
 
+/* set default tab to display */
 #flatiron {
   display: inherit;
 }
+
+.languages {
+  color: #ff2828
+}
+
+/* projects section */
+#projects {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Sansita', sans-serif;
+  height: 100vh;
+}
+
+#projects h2 {
+  color: #4fff19;
+}
+
+#projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+  height: 80vh;
+  border: 1px solid #bbb
+}
+
+
+
+/* contact section */
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Sansita', sans-serif;
+  height: 100vh;
+}
+
+#contact h2 {
+  color: #23ddff
+}
+
+
 

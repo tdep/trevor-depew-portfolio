@@ -31,6 +31,9 @@ const About = () => {
           <li>Python</li>
           <li>Ruby on Rails</li>
           <li>CSS</li>
+          <li>React Redux</li>
+          <li>SQL</li>
+          <li>Flask</li>
         </ul>
       </div>
     </div>
