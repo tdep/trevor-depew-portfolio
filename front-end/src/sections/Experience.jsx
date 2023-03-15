@@ -1,8 +1,7 @@
 const Experience = () => {
 
-  const handleCard = (e) => {
+  const handleCard = (e, tabname) => {
     let i, cards, tablinks
-    let tabID = e.target.id.split("-")[0]
     cards = document.getElementsByClassName("experience-cards")
     for (i = 0; i < cards.length; i++) {
       cards[i].style.display = "none"
@@ -13,17 +12,17 @@ const Experience = () => {
       tablinks[i].className = tablinks[i].className.replace(" active", "")
     }
 
-    document.getElementById(tabID).style.display = "inherit"
-    e.target.className += "active"
+    document.getElementById(tabname).style.display = "inherit"
+    e.target.className += " active"
   }
 
   return (
     <div id="experience-container">
-      <div id="side-menu" role="tablist">
-        <a id="flatiron-link" className="tablinks" onClick={handleCard}>Flatiron School</a>
-        <a id="piano-link" className="tablinks" onClick={handleCard}>Piano Technician</a>
-        <a id="masters-link" className="tablinks" onClick={handleCard}>CUNY Brooklyn College</a>
-        <a id="roli-link" className="tablinks" onClick={handleCard}>ROLI</a>
+      <div id="side-menu">
+        <a className="tablinks" onClick={(e) => handleCard(e, "flatiron")}>Flatiron School</a>
+        <a className="tablinks" onClick={(e) => handleCard(e, "piano")}>Piano Technician</a>
+        <a className="tablinks" onClick={(e) => handleCard(e, "masters")}>CUNY Brooklyn College</a>
+        <a className="tablinks" onClick={(e) => handleCard(e, "roli")}>ROLI</a>
       </div>
       <div id="experience-text">
         <div id="flatiron" className="experience-cards">
@@ -65,7 +64,19 @@ const Experience = () => {
         <div id="masters" className="experience-cards">
           <div className="photo-blurb">
             <img id="bc-logo"></img>
-            <p className="experience-blurbs"></p>
+            <p id="masters-blurb" className="experience-blurbs">Earned a Master's in Music (MM) degree in Composition 
+            with a focus on orchestral and experimental playback. Performed original and existing music in small
+            ensembles for live audiences.<br/><br/>
+            
+            Presented research projects on historical subjects and created reports on analytical topics in traditional
+            western music theory as well as Shenkerian analysis.<br/><br/>
+
+            Designed and built a handful of electronic music instruments using resistor-capacitor circuits, Arduino, 
+            and integrated circuits.<br/><br/>
+
+            As a final thesis, composed a 27 minute, multi-movement symphony for 60-piece orchestra.
+
+            </p>
           </div>
         </div>
         <div id="roli" className="experience-cards">
