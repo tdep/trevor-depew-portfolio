@@ -25,34 +25,34 @@ function App() {
         </div>
       </div>
       <hr className="solid"></hr>
-      <div id="about" className="content-container">
+      <div id="about" className="page-container">
         <h2 className="section-title">About</h2>
-        <div className="blurb-container">
+        <div className="content-container">
           <About />
         </div>
       </div>
       <hr className="solid"></hr>
-      <div id="experience" className="content-container">
+      <div id="experience" className="page-container">
         <h2 className="section-title">Experience</h2>
-        <div className="blurb-container">
+        <div className="content-container">
           <Experience />
         </div>
       </div>
       <hr className="solid"></hr>
-      <div id="projects" className="content-container">
+      <div id="projects" className="page-container">
         <h2 className="section-title">Projects</h2>
-        <div className="blurb-container">
+        <div className="content-container">
           <Projects />
         </div>
       </div>
       <hr className="solid"></hr>
-      <div id="contact" className="content-container">
+      <div id="contact" className="page-container">
         <h2 className="section-title">Contact</h2>
         <Contact />
       </div>
       <hr className="solid"></hr>
       <div id="footer">
-        <div className="blurbContainer">
+        <div className="contentContainer">
           <Footer />
         </div>
       </div>

@@ -2,6 +2,8 @@
 * {
   background-color: transparent;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 #window {
@@ -19,13 +21,13 @@ a {
 
 .solid {
   border-top: 3px solid #bbb;
-  border-radius: 5px;
+  border-radius: 100%;
   width: 80%;
-  margin: 10px 0 10px 0;
+  margin: 1vh 0 1vh 0;
   padding: 0;
 }
 
-.content-container {
+.page-container {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -33,15 +35,14 @@ a {
 }
 
 .section-title {
-  font-family: 'Bungee Shade', cursive;
-  font-size: 2.3vw;
-  text-align: right;
+  font-family: 'Rum Raisin', sans-serif;
+  font-size: 10vh;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
 }
 
-.blurb-container {
+.content-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,9 +82,9 @@ a {
 }
 
 #home h1 {
-  font-family: 'Bungee Shade', cursive;
-  font-size:8vw;
-  margin: 40px 0 10px 0;
+  font-family: 'Rum Raisin', sans-serif;
+  font-size:20vh;
+  margin: 4vh 0 4vh 0;
   background: linear-gradient(180deg, #ff2828 0%, #ff2828 39%,
   transparent 39%, transparent 41%, #ff8400 41%, #ff8400 49%,
   transparent 49%, transparent 51%, #ffe21b 51%, #ffe21b 59%,
@@ -95,12 +96,12 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
-  border-radius: 10px
+
 }
 #home h4 {
   font-family: 'Bungee Shade', cursive;
   font-size: 4vw;
-  margin: 10px 0 10px 0;
+  margin: 1vh 0 1vh 0;
   text-transform: uppercase;
   background: linear-gradient(90deg, 
   #ff2828 0%, #ff2828 20%,
@@ -114,7 +115,6 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
-  border-radius: 10px
 }
 
 #links {
@@ -122,13 +122,13 @@ a {
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
-  margin: 10px 0 10px 0;
+  margin: 1vh 0 1vh 0;
   text-transform: uppercase;
 }
 
 #links a {
-  font-family: 'Bungee Shade', cursive;
-  font-size: 2.3vw;
+  font-family: 'Rum Raisin', sans-serif;
+  font-size: 6vh;
   text-decoration: none;
   margin: 0;
   padding: 0;
@@ -141,9 +141,9 @@ a {
 }
 
 #links p {
-  font-family: 'Bungee Shade', cursive;
-  font-size: 2.3vw;
-  margin: 0 1vw 0 1vw;
+  font-family: 'Rum Raisin', sans-serif;
+  font-size: 6vh;
+  margin: 0;
   padding: 0;
 }
 
@@ -167,16 +167,12 @@ a {
 #about {
   display: flex;
   flex-direction: column;
+  font-family: 'Sansita', sans-serif;
   height: 100vh;
 }
 
 #about h2 {
   color: #ff2828;
-}
-
-#about p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.3vw;
 }
 
 #about-container {
@@ -191,6 +187,7 @@ a {
   margin: 1vw;
 }
 
+
 #photo {
   shape-outside: circle(50%);
   float: left;
@@ -202,9 +199,28 @@ a {
   margin: 0.5vw;
 }
 
-#blurb {
-  text-align: justify;
+#about-text-container {
+  display: inline;
+  flex-direction: row;
 }
+
+#about-text {
+  display: inline;
+  font-size: 3.6vh;
+}
+
+#about-text article::first-letter {
+  initial-letter: 3;
+  font-family: "Bungee Shade", cursive;
+  font-size: large;
+  font-weight: bold;
+  color: #ff2828;
+  background: #0f3005;
+  border: 0.3em double #ffe21b;
+  margin: 0 0.5em 0em 1em;
+}
+
+/* tech  */
 
 #tech-container {
   display: flex;
@@ -213,9 +229,13 @@ a {
   justify-content: center;
 }
 
+#tech-container p {
+  font-size: 3.6vh;
+  margin: 0.5vh;
+}
+
 #tech-container ul {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1vw;
+  font-size: 3vh;
   column-count: 2;
   justify-content: center;
   text-align: center;
@@ -241,6 +261,7 @@ a {
 
 /* experience section */
 #experience {
+  font-family: 'Sansita', sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -255,8 +276,8 @@ a {
   flex-direction: row;
   justify-content: right;
   align-items: center;
-  width: 50vw;
-  height: 50vh;
+  width: 70vw;
+  height: 70vh;
   position: relative;
 }
 
@@ -273,8 +294,7 @@ a {
 }
 
 #side-menu a {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2vw;
+  font-size: 1.4vw;
   text-align: right;
   color: #bbb;
   width: 100%;
@@ -294,14 +314,13 @@ a {
   transition: 0.5s;
 }
 
-#experiences {
+#experience-text {
   width: 80%;
   height: 100%;
 }
 
 .experience-blurbs {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1vw;
+  font-size: 1.6vw;
   margin: 0;
 }
 
@@ -314,7 +333,6 @@ a {
 }
 
 .experience-cards h1 {
-  font-family: 'Bungee Shade', cursive;
   font-size: 1vw;
   margin: 0;
   transition: 0.5s;

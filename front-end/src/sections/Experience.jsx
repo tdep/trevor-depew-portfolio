@@ -25,16 +25,29 @@ const Experience = () => {
         <a id="masters-link" className="tablinks" onClick={handleCard}>CUNY Brooklyn College</a>
         <a id="roli-link" className="tablinks" onClick={handleCard}>ROLI</a>
       </div>
-      <div id="experiences">
+      <div id="experience-text">
         <div id="flatiron" className="experience-cards">
-          <h1>Flatiron School</h1>
           <div className="photo-blurb">
             <img id="flatiron-logo"></img>
-            <p className="experience-blurbs"></p>
+            <p id="flatiron-blurb" className="experience-blurbs"> As a student, studied front and back-end development
+            in <span id="languages">JavaScript</span>, <span id="languages">React</span>, 
+            <span id="languages"> Ruby on Rails</span>, and <span id="languages">Python / Flask</span>. Designed, wireframed, 
+            and developed several applications both individually and as part of a team using combinations of the aforementioned
+            languages and existing or custom APIs.<br/><br/>
+
+            Assisted other students with their studies and projects helping to ensure the class as a whole was able to 
+            achieve the most out of the time on and off campus. This included leading study and review sessions outside 
+            of normal class hours.<br/><br/>
+
+            Independantly learned additional tools such as <span id="languages">React Redux</span> and more advanced 
+            <span id="languages"> CSS</span> concepts.
+            Demonstrated and presented applications in front of audiences of students and teachers giving user scenarios
+            and explinations of code as well as expereinces thereof. 
+
+            </p>
           </div>
         </div>
         <div id="piano" className="experience-cards">
-          <h1>Piano Technician</h1>
           <div className="photo-blurb">
             <img id="piano-logo"></img>
             <p id="piano-blurb" className="experience-blurbs"> Provided piano tuning, regulation and repair services 
@@ -50,14 +63,12 @@ const Experience = () => {
           </div>
         </div>
         <div id="masters" className="experience-cards">
-          <h1>CUNY Brooklyn College</h1>
           <div className="photo-blurb">
             <img id="bc-logo"></img>
             <p className="experience-blurbs"></p>
           </div>
         </div>
         <div id="roli" className="experience-cards">
-          <h1>ROLI</h1>
           <div className="photo-blurb">
             <p id="roli-blurb" className="experience-blurbs">Designed and implemented a system to track and catalog 
             product shipments and returns using Google Sheets and Google Docs significantly 
