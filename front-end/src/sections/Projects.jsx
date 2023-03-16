@@ -1,19 +1,29 @@
 import { useState, useEffect } from "react"
 
 const Projects = () => {
+  const [counter, setCounter] = useState()
+  const allProjects = document.getElementsByClassName("project")
+  const counterLimit = allProjects.length - 1
+
+  useEffect(() => {
+    setCounter(0)
+  }, [])
   
-  function decrementList() {
-    let i, projectCards, displayCard
-    projectCards = document.getElementsByClassName("project")
-    for (i = 0; projectCards.length; i++) {
-      projectCards[i].style.display = "none"
+  function decrementProjects() {
+    if (counter <= 0) {
+      setCounter(counterLimit)
+    } else {
+      setCounter(counter - 1)
     }
   }
 
-  function incrementList() {
-
+  function incrementProjects() {
+    if (counter != counterLimit) {
+      setCounter(counter +1)
+    } else {
+      setCounter(0)
+    }
   }
-
 
   return (
     <div id="projects-container">
@@ -21,10 +31,11 @@ const Projects = () => {
 
         {/* TADLAB */}
 
-        <div id="tadlab" index={0} className="project">
+        <div id="tadlab" className="project">
           <div className="project-image-text-container">
             <div className="project-image-container">
               <img className="project-image"/>
+              {counter}
             </div>
             <div className="project-text-container">
               <div className="project-title-container">
@@ -54,7 +65,7 @@ const Projects = () => {
 
         {/* Cheekers */}
 
-        <div id="cheekers" index={1} className="project">
+        <div id="cheekers" className="project">
           <div className="project-image-text-container">
             <div className="project-image-container">
               <img className="project-image"/>
@@ -87,7 +98,7 @@ const Projects = () => {
 
         {/* Sequinzer-6001 */}
 
-        <div id="sequinzer" index={2} className="project">
+        <div id="sequinzer" className="project">
           <div className="project-image-text-container">
             <div className="project-image-container">
               <img className="project-image" />
@@ -123,15 +134,15 @@ const Projects = () => {
 
       <div id="project-nav-container">
         <div className="arrow-container">
-          <button id="left-arrow" onClick={decrementList}>{"<"}</button>
+          <button id="left-arrow" onClick={decrementProjects}>{"<"}</button>
         </div>
         <div id="projects-list-container">
-          <span id="tadlab" index={0} className="project-nav-li">TADLAB</span>
-          <span id="cheekers" index={1} className="project-nav-li">Cheekers</span>
-          <span id="sequinzer" index={2} className="project-nav-li">Sequinzer-6001</span>
+          <span id="tadlab" className="project-nav-li">TADLAB</span>
+          <span id="cheekers" className="project-nav-li">Cheekers</span>
+          <span id="sequinzer" className="project-nav-li">Sequinzer-6001</span>
         </div>
         <div className="arrow-container">
-          <button id="right-arrow" onClick={incrementList}>{">"}</button>
+          <button id="right-arrow" onClick={incrementProjects}>{">"}</button>
         </div>
       </div>
     </div>
