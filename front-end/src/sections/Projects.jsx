@@ -1,28 +1,32 @@
 import { useState, useEffect } from "react"
+import {projectList} from "../components/ProjectList"
+
 
 const Projects = () => {
-  const [counter, setCounter] = useState()
-  const allProjects = document.getElementsByClassName("project")
-  const counterLimit = allProjects.length - 1
-
-  useEffect(() => {
-    setCounter(0)
-  }, [])
+  const [counter, setCounter] = useState(0)
+  const [allProjects, setAllProjects] = useState([])
+  console.log(projectList)
   
+  useEffect(() => {
+    let projects = document.getElementById("tadlab")
+    setAllProjects([...allProjects, projects])
+    console.log(allProjects)
+  }, [])
+
   function decrementProjects() {
-    if (counter <= 0) {
-      setCounter(counterLimit)
-    } else {
-      setCounter(counter - 1)
+    if (counter == 0) {
+      setCounter(allProjects.length) 
     }
+    setCounter(counter - 1)
+
   }
 
   function incrementProjects() {
-    if (counter != counterLimit) {
-      setCounter(counter +1)
-    } else {
-      setCounter(0)
+    if (counter == allProjects.length - 1) {
+      setCounter(-1)
     }
+    setCounter(counter + 1)
+
   }
 
   return (
@@ -35,7 +39,6 @@ const Projects = () => {
           <div className="project-image-text-container">
             <div className="project-image-container">
               <img className="project-image"/>
-              {counter}
             </div>
             <div className="project-text-container">
               <div className="project-title-container">
