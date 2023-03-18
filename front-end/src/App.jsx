@@ -7,6 +7,8 @@ import './App.css'
 
 function App() {
 
+  
+
   return (
     <div id="window">
       <div id="home" className="content-container">
