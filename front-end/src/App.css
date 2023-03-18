@@ -381,6 +381,20 @@ a {
   color: #bbb
 }
 
+.indicators {
+  display: flex;
+  justify-content: center;
+}
+
+.indicators > button {
+  margin: 5px;
+}
+
+.indicators > button.active {
+  background-color: green;
+  color: #bbb;
+}
+
 
 
 

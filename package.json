@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "react-bootstrap": "^2.7.2"
+    "react-bootstrap": "^2.7.2",
+    "react-swipeable": "^7.0.0"
   }
 }
