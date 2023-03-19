@@ -36,10 +36,21 @@ const Carousel = ({ children }) => {
     };
   });
 
+  const skipHandler = (e) => {
+    let thisButton = e.target;
+    if (thisButton.id === "prev") {
+      updateIndex(activeIndex - 1);
+    } else if (thisButton.id === "next") {
+      updateIndex(activeIndex + 1)
+    }
+  }
+
   const handlers = useSwipeable({
     onSwipedLeft: () => updateIndex(activeIndex + 1),
     onSwipedRight: () => updateIndex(activeIndex - 1)
   });
+
+
 
   return (
     <div 
@@ -54,8 +65,10 @@ const Carousel = ({ children }) => {
       </div>
       <div className="indicators">
         <button
-          onClick={() => {
-            updateIndex(activeIndex - 1);
+          id="prev"
+          onClick={(e) => {
+            skipHandler(e)
+            // updateIndex(activeIndex - 1);
           }}
         >
           Prev
@@ -73,8 +86,10 @@ const Carousel = ({ children }) => {
           );
         })}
         <button 
-          onClick={() => {
-            updateIndex(activeIndex + 1);
+          id="next"
+          onClick={(e) => {
+            skipHandler(e)
+            // updateIndex(activeIndex + 1);
           }}
         >
           Next
