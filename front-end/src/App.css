@@ -389,7 +389,14 @@ a {
   flex-direction: row;
   width: 100%;
   height: 95%;
-  border: 1px solid #bbb;
+  box-shadow: 
+    5px 0px 5px #4e2d0a inset,
+    3px 3px 5px #6f410f inset,
+    0px 5px 5px #4e2d0a inset,
+    -5px 0px 5px #4e2d0a inset,
+    -3px -3px 5px #3a2208 inset,
+    0px -5px 5px #4e2d0a inset;
+  /* border: 1px solid #4e2d0a; */
   border-radius: 0.8vh;
   background: #5e360c;
 }
@@ -416,12 +423,15 @@ a {
   justify-content: center;
   width: 100%;
   height: 100%;
-  border: 1px solid #bbb;
+  border: 2px solid #272626;
+  box-shadow: 
+    5px 0px 5px #4e2d0a, 
+    -5px 0px 5px #4e2d0a,
+    0px 5px 5px #4e2d0a,
+    0px -5px 5px #4e2d0a;
   border-radius: 7vh;
   background: transparent;
 }
-
-
 
 #screen-efx {
   position: absolute;
@@ -434,8 +444,7 @@ a {
   5px 5px 10px #474646 inset,
   15px 15px 20px #272626 inset, 
   -10px -10px 15px #1a1919 inset,
-  -20px -20px 30px #272626 inset
-  ;
+  -20px -20px 30px #272626 inset;
   border-radius: 7vh;
 }
 
@@ -457,7 +466,7 @@ a {
 
 #image-efx {
   position: absolute;
-  width: 100%;
+  width: 99%;
   height: 59%;
   box-shadow: 
     0px 5px 4px darkolivegreen,
@@ -471,7 +480,12 @@ a {
   align-items: center;
   width: 35%;
   height: 95%;
-  border: 1px solid #bbb;
+  box-shadow:
+    5px 0px 5px #4e2d0a,
+    -5px 0px 5px #4e2d0a,
+    0px 5px 5px #4e2d0a,
+    0px -5px 5px #4e2d0a;
+  border: 2px solid #272626;
   background-color: #1a1c1d;
   margin: 1vw;
 }
@@ -482,6 +496,8 @@ a {
   grid-template-rows: repeat(10,1fr);
   width: 95%;
   height: 30%;
+  color: #0f0f0f;
+  background: #969090;
   border: 1px solid #bbb;
   margin: 0.5vw;
 }
@@ -549,40 +565,51 @@ a {
 #text-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 95%;
   height: 70%;
-  border: 1px solid #bbb;
+  background: #969090;
+  border: 1px solid #1a1c1d;
   margin: 0.5vw;;
 }
 
 #description-container {
   display: flex;
   flex-direction: column;
+  width: 95%;
   height: 40%;
-  border: 1px solid #bbb;
+  background: #0f0f0f;
+  border: 1px solid #1a1919;
+  border-radius: 1vh;
+  margin-top: 0.5vw;
 }
 
 #title {
   height: 20%;
-  border: 1px solid #bbb;
+  background: #0f0f0f;
+  border-bottom: 1px solid #bbb;
+  border-radius: 1vh 1vh 0 0 ;
 }
 
 #text {
   height: 80%;
-  border: 1px solid #bbb;
+  /* border: 1px solid #bbb; */
 }
 
 #tool-link-container {
   display: flex;
   flex-direction: column;
+  width: 95%;
   justify-content: space-around;
   height: 60%;
-  border: 1px solid #bbb;
+  /* border: 1px solid #bbb; */
 }
 
 .tool-link {
   height: 20%;
-  border: 1px solid #bbb;
+  background: #0f0f0f;
+  border: 1px solid #1a1919;
+  border-radius: 1vh;
 }
 
 /* project */

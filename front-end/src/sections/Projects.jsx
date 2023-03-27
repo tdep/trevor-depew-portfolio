@@ -51,7 +51,7 @@ const Projects = () => {
             <div id="text-container">
               <div id="description-container">
                 <div id="title">
-                  <h2>{projects[0].title}</h2>
+                  <h1>{projects[0].title}</h1>
                 </div>
                 <div id="text">
                   <p>{projects[0].description}</p>
