@@ -13,16 +13,37 @@ const Projects = () => {
         </div>
         <div id="control-panel">
           <div id="indicator-container">
-            <div id="indicator-labels">
-
-            </div>
+            <div id="a">auto</div>
+            <div id="one">1</div>
+            <div id="two">2</div>
+            <div id="three">3</div>
             <div id="selector-container">
-              
+              <div id="selector">
+                <div id="handle">
+                </div>
+              </div>
             </div>
-
           </div>
           <div id="text-container">
-            
+            <div id="description-container">
+              <div id="title">
+                <h2></h2>
+              </div>
+              <div id="text">
+                <p></p>
+              </div>
+            </div>
+            <div id="tool-link-container">
+              <div id="tool-link-1" className="tool-link">
+                <p></p>
+              </div>
+              <div id="tool-link-2" className="tool-link">
+                <p></p>
+              </div>
+              <div id="tool-link-3" className="tool-link">
+                <p></p>
+              </div>
+            </div>
           </div>
         </div>
 
