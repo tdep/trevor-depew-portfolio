@@ -7,7 +7,27 @@ const Projects = () => {
 
   return (
     <div id="projects-container">
-      <Carousel>
+      <div id="chasis">
+        <div id="screen">
+
+        </div>
+        <div id="control-panel">
+          <div id="indicator-container">
+            <div id="indicator-labels">
+
+            </div>
+            <div id="selector-container">
+              
+            </div>
+
+          </div>
+          <div id="text-container">
+            
+          </div>
+        </div>
+
+      </div>
+      {/* <Carousel>
         <CarouselItem>
           <TadLab />
         </CarouselItem>
@@ -17,7 +37,7 @@ const Projects = () => {
         <CarouselItem>
           <Cheekers />
         </CarouselItem>
-      </Carousel>
+      </Carousel> */}
 
     </div>
   )
