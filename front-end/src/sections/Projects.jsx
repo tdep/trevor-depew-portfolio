@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Carousel, { CarouselItem } from "../components/Carousel"
 
-const Projects = ({projects}) => {
+const Projects = () => {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -17,7 +17,6 @@ const Projects = ({projects}) => {
       setLoading(false)
     })
     .catch(err => console.log(err))
-    }
   }
 
   if (loading) {
@@ -26,8 +25,15 @@ const Projects = ({projects}) => {
     return (
       <div id="projects-container">
         <div id="chasis">
-          <div id="screen">
-            <img src={projects[0].img} />
+          <div id="screen-container">
+            <div id="bar-top" className="black-bar">
+              <div id="screen">
+                <img src={projects[0].img} />
+                <div id="image-efx"></div>
+                <div id="screen-efx"></div>
+                <div id="screen-flare"></div>
+              </div>
+            </div>
           </div>
           <div id="control-panel">
             <div id="indicator-container">
@@ -81,5 +87,6 @@ const Projects = ({projects}) => {
       </div>
     )
   }
+}
 
 export default Projects
