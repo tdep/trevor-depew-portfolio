@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import About from './sections/About'
 import Experience from './sections/Experience'
 import Projects from './sections/Projects'
@@ -6,6 +7,8 @@ import Footer from './components/Footer'
 import './App.css'
 
 function App() {
+
+
 
   
 
