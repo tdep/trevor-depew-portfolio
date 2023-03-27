@@ -4,6 +4,7 @@ import { useSwipeable } from 'react-swipeable';
 export const CarouselItem = ({ children, width }) => {
   return (
     <div className="carousel-item" style={{ width: width}}>
+      
       {children}
     </div>
   )
@@ -58,17 +59,18 @@ const Carousel = ({ children }) => {
       className="carousel"
       onMouseEnter={() => { setPaused(true) }}
       onMouseLeave={() => { setPaused(false) }}>
+        
       <div className="inner" style={{ transform: `translateX(-${activeIndex * 100}%` }}>
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, { width: "100%" });
         })}
       </div>
+
       <div className="indicators">
         <button
           id="prev"
           onClick={(e) => {
             skipHandler(e)
-            // updateIndex(activeIndex - 1);
           }}
         >
           Prev
@@ -89,7 +91,6 @@ const Carousel = ({ children }) => {
           id="next"
           onClick={(e) => {
             skipHandler(e)
-            // updateIndex(activeIndex + 1);
           }}
         >
           Next

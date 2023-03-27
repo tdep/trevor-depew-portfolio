@@ -4,7 +4,7 @@ export const Sequinzer = () => {
     < div id = "sequinzer" className = "project" >
       <div className="project-image-text-container">
         <div className="project-image-container">
-          <img className="project-image" />
+          <img className="project-image" src="../../public/sequinzer_demo.gif"/>
         </div>
         <div className="project-text-container">
           <div className="project-title-container">

@@ -3,7 +3,10 @@ export const TadLab = () => {
     < div id = "tadlab" className = "project" >
       <div className="project-image-text-container">
         <div className="project-image-container">
-          <img className="project-image" />
+          <img 
+            className="project-image" 
+            src="../../public/tadlab_demo.gif"
+            />
         </div>
         <div className="project-text-container">
           <div className="project-title-container">

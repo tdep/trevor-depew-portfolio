@@ -1,13 +1,22 @@
 import Carousel, { CarouselItem } from "../components/Carousel"
+import { TadLab } from "../components/TadLab"
+import { Sequinzer } from "../components/Sequinzer"
+import { Cheekers } from  "../components/Cheekers"
 
 const Projects = () => {
 
   return (
     <div id="projects-container">
       <Carousel>
-        <CarouselItem>Item 1</CarouselItem>
-        <CarouselItem>Item 2</CarouselItem>
-        <CarouselItem>Item 3</CarouselItem>
+        <CarouselItem>
+          <TadLab />
+        </CarouselItem>
+        <CarouselItem>
+          <Sequinzer />
+        </CarouselItem>
+        <CarouselItem>
+          <Cheekers />
+        </CarouselItem>
       </Carousel>
 
     </div>
