@@ -28,22 +28,46 @@ const Projects = () => {
           <div id="screen-container">
             <div id="bar-top" className="black-bar">
               <div id="screen">
-                <img src={projects[0].img} />
+                <img 
+                  src={projects[0].img}
+                  style={{width: "100%",
+                          height: "70%"}}
+                  />
                 <div id="image-efx"></div>
                 <div id="screen-efx"></div>
                 <div id="screen-flare"></div>
               </div>
             </div>
           </div>
-          <div id="control-panel">
-            <div id="indicator-container">
-              <div id="a">auto</div>
-              <div id="one">1</div>
-              <div id="two">2</div>
-              <div id="three">3</div>
-              <div id="selector-container">
-                <div id="selector">
-                  <div id="handle">
+          <div id="control-panel-container">
+            <div id="control-panel">
+              <div id="selector-indicator-container">
+                <h1 id="selector-label">Ch.</h1>
+                <div id="selector-container">
+                  <div id="selector-container">
+                  <div id="indicator">
+                    <h1 id="indicator-labels">
+                      <span id="pos0">auto</span>
+                      <span id="pos1">1</span>
+                      <span id="pos2">2</span>
+                    </h1>
+                  </div>
+                    <div id="selector">
+                      <div id="handle">
+                        ^
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="power-control-container">
+                <h1 id="power-label">PWR</h1>
+                <div id="power-switch-container">
+                  <input type="checkbox"></input>
+                </div>
+                <div id="power-light-container">
+                  <div id="power-light">
+                    | | | 
                   </div>
                 </div>
               </div>
@@ -59,13 +83,19 @@ const Projects = () => {
               </div>
               <div id="tool-link-container">
                 <div id="tool-link-1" className="tool-link">
-                  <p>{projects[0].tools[0]}</p>
+                  <p>{projects[0].tools.map((tool, i) => {
+                    if (i == (projects[0].tools.length) -1) {
+                      return (tool)
+                    } else {
+                      return (`${tool}, `)
+                    }
+                  })}</p>
                 </div>
                 <div id="tool-link-2" className="tool-link">
-                  <p>{projects[0].tools[1]}</p>
+                  <a href={`${projects[0].links.github}`}>GitHub Repository</a>
                 </div>
                 <div id="tool-link-3" className="tool-link">
-                  <p>{projects[0].tools[2]}</p>
+                  <a href={`${projects[0].links.tonejs}`}>Tone.js API</a>
                 </div>
               </div>
             </div>

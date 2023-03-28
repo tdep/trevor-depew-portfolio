@@ -68,14 +68,13 @@
       "title": "TadLab",
       "category": "music",
       "img": "../../public/tadlab_demo.gif",
-      "description": "A software synthesizer with the ability to connect to an external MIDI device.",
-      "tools": ["React.js", "Tone.js", "Ruby", "Rails", "CSS"],
-      "links": [
+      "description": "An in-browser software synthesizer controlled with the mouse and keyboard that is capable of producing polyphonic sounds, and effects.",
+      "tools": ["React.js", "Tone.js", "Ruby on Rails", "CSS"],
+      "links":
         {
         "github": "https://github.com/tdep/tadlab",
         "tonejs": "https://tonejs.github.io/"
         }
-      ]
     },
     {
       "id": 2,
