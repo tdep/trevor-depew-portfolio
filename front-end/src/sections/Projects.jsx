@@ -62,12 +62,17 @@ const Projects = () => {
               </div>
               <div id="power-control-container">
                 <h1 id="power-label">PWR</h1>
-                <div id="power-switch-container">
-                  <input type="checkbox"></input>
-                </div>
-                <div id="power-light-container">
-                  <div id="power-light">
-                    | | | 
+                <div id="switch-light-container">
+                  <div id="power-switch-container">
+                    <label className="switch" id="power-switch">
+                      <input type="checkbox" id="on-off"></input>
+                      <span className="slider"></span>
+                    </label>
+                  </div>
+                  <div id="power-light-container">
+                    <div id="power-light">
+                      | | | 
+                    </div>
                   </div>
                 </div>
               </div>
