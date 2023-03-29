@@ -2,9 +2,13 @@ import { useEffect, useState } from "react"
 import Carousel, { CarouselItem } from "../components/Carousel"
 
 const Projects = () => {
+  let channels = ["pos0", "pos1", "pos2"]
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
   const [power, setPower] = useState(true)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [degree, setDegree] = useState(0)
+  // const [channel, setChannel] = useState(channels[activeIndex])
 
   useEffect(() => {
     getProjectData()
@@ -30,6 +34,30 @@ const Projects = () => {
     console.log(power)
   }
 
+  function handleSelector() {
+    let handle = document.getElementById("handle")
+    let channel = document.getElementById(`${channels[activeIndex]}`)
+    if (activeIndex == channels.length - 1) {
+      setDegree(0)
+      handle.style.rotate = `${degree}deg`
+      setActiveIndex(0)
+      if (channel.id == channels[activeIndex]) {
+        channel.style.color = "#ffc400"
+      } else {
+        channel.style.color = "0f0f0f"
+      }
+    } else {
+      setDegree(degree + 35)
+      handle.style.rotate = `${degree}deg`
+      setActiveIndex(activeIndex + 1)
+      if (channel.id == channels[activeIndex]) {
+        channel.style.color = "#ffc400"
+      } else {
+        channel.style.color = "0f0f0f"
+      }
+    }
+  }
+
   if (loading) {
     return (<div>Loading...</div>)
   } else {
@@ -42,7 +70,8 @@ const Projects = () => {
                 <img 
                   src={projects[0].img}
                   style={{width: "100%",
-                          height: "70%"}}
+                          height: "70%",
+                          borderRadius: "1%"}}
                   />
                 <div id="image-efx"></div>
                 <div id="screen-efx"></div>
@@ -63,7 +92,7 @@ const Projects = () => {
                       <span id="pos2">2</span>
                     </h1>
                   </div>
-                    <div id="selector">
+                    <div id="selector" onClick={() => handleSelector()}>
                       <div id="handle">
                         ^
                       </div>
