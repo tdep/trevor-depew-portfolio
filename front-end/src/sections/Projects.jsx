@@ -4,6 +4,7 @@ import Carousel, { CarouselItem } from "../components/Carousel"
 const Projects = () => {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
+  const [power, setPower] = useState(true)
 
   useEffect(() => {
     getProjectData()
@@ -17,6 +18,16 @@ const Projects = () => {
       setLoading(false)
     })
     .catch(err => console.log(err))
+  }
+
+  function powerOnOff(e) {
+    let powerOn = e.target.checked
+    if (powerOn) {
+      setPower(true)
+    } else if (!powerOn) {
+      setPower(false)
+    }
+    console.log(power)
   }
 
   if (loading) {
@@ -65,12 +76,12 @@ const Projects = () => {
                 <div id="switch-light-container">
                   <div id="power-switch-container">
                     <label className="switch" id="power-switch">
-                      <input type="checkbox" id="on-off"></input>
+                      <input type="checkbox" id="on-off" onClick={(e) => powerOnOff(e)} defaultChecked></input>
                       <span className="slider"></span>
                     </label>
                   </div>
                   <div id="power-light-container">
-                    <div id="power-light">
+                    <div id="power-light" className={power ? "active" : ""}>
                       <div id="middle-ring">
                         <div id="inner-ring"></div>
                       </div>

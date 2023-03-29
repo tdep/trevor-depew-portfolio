@@ -713,8 +713,19 @@ input:checked + .slider:before {
     -6px -4px 6px 0px #4d0c0c inset,
     -12px -8px 12px 0px #851414 inset;
   background: #811414;
-  border: 3px solid #474646;
   border-radius: 50%;
+  transition: 2000ms;
+  transition-delay: 1000ms
+}
+
+#power-light.active {
+  background: #ff2828;
+  box-shadow:
+    1px 3px 20px 8px #b11c1cd0,
+    4px 6px 6px 0px #bb8282 inset,
+    8px 12px 12px 0px #936060 inset,
+    -6px -4px 6px 0px #851414 inset,
+    -12px -8px 12px 12px #851414 inset;
 }
 
 #middle-ring {
