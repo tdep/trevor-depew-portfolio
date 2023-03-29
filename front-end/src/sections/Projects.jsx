@@ -71,7 +71,9 @@ const Projects = () => {
                   </div>
                   <div id="power-light-container">
                     <div id="power-light">
-                      | | | 
+                      <div id="middle-ring">
+                        <div id="inner-ring"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
