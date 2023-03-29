@@ -547,6 +547,10 @@ a {
   transform-origin: bottom center;
 }
 
+#indicator-labels span.active {
+  color: #ffc400;
+}
+
 #pos0 {
   transform: translate(-2vw, 2vw); 
 }
