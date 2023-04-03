@@ -97,8 +97,8 @@ const Projects = () => {
   // handle iterating through projects
   function updateIndex(newIndex) {
     if (newIndex < 0) {
-      newIndex = channels.length - 1;
-    } else if (newIndex >= channels.length) {
+      newIndex = projects.length - 1;
+    } else if (newIndex >= projects.length) {
       newIndex = 0;
     }
     setActiveIndex(newIndex)
@@ -163,6 +163,15 @@ const Projects = () => {
 
   // handle project matrix buttons
   function handleSelected(e) {
+    let selectedIndex = parseInt((e.target.id).slice(3))
+    if (selectedIndex >= projects.length) {
+      return
+    } else {
+      setAutoScroll(false)
+      auto.className = ""
+      setActiveIndex(selectedIndex)
+      console.log(selectedIndex)
+    }
     // change classname to omit "matrix" and allow buttons to be depressed
   }
 
