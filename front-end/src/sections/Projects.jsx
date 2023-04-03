@@ -126,7 +126,7 @@ const Projects = () => {
           <div id="control-panel-container">
             <div id="control-panel">
               <div id="selector-indicator-container">
-                <h1 id="selector-label">Ch.</h1>
+                {/* <h1 id="selector-label">Ch.</h1> */}
                 <div id="selector-container">
                   <div id="channel-btn-container">
                     <span>Prev</span>
@@ -148,15 +148,11 @@ const Projects = () => {
                 </div>
               </div>
               <div id="power-control-container">
-                {/* <h1 id="power-label">PWR</h1> */}
                 <div id="switch-light-container">
                   <div id="power-switch-container">
-                    <label className="switch" id="power-switch">
-                      <span>{'\&'}</span>
-                      <span></span>
-                      {/* <input type="checkbox" id="on-off" onClick={(e) => powerOnOff(e)} defaultChecked></input> */}
-                      {/* <span className="slider"></span> */}
-                    </label>
+                      <span id="on-btn">I</span>
+                      <span id="off-btn">O</span>
+                      <span id="sound-btn">🕪</span>
                   </div>
                   <div id="power-light-container">
                     <div id="power-light" className={power ? "active" : ""}>
