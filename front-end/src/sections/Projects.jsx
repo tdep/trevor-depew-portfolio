@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import "../styling/projects.css"
+import "../styling/buttons.css"
 
 const Projects = () => {
   const auto = document.getElementById("auto-scroll")
@@ -170,6 +172,7 @@ const Projects = () => {
       setAutoScroll(false)
       auto.className = ""
       setActiveIndex(selectedIndex)
+      e.target.style.top = "4px"
       console.log(selectedIndex)
     }
     // change classname to omit "matrix" and allow buttons to be depressed
@@ -203,9 +206,9 @@ const Projects = () => {
                 {/* <h1 id="selector-label">Ch.</h1> */}
                 <div id="selector-container">
                   <div id="channel-btn-container">
-                    <span id="prev" onClick={(e) => handlePrevNext(e)}>Prev</span>
-                    <span id="auto-scroll" className="pwr-on" onClick={() => handleAutoScroll()}>Auto</span>
-                    <span id="next" onClick={(e) => handlePrevNext(e)}>Next</span>
+                    <span id="prev" className="button" onClick={(e) => handlePrevNext(e)}>Prev</span>
+                    <span id="auto-scroll" className="button pwr-on" onClick={() => handleAutoScroll()}>Auto</span>
+                    <span id="next" className="button" onClick={(e) => handlePrevNext(e)}>Next</span>
                   </div>
                   <div id="indicator-container">
                     <div id="indicators">
@@ -213,7 +216,7 @@ const Projects = () => {
                           return (
                             <span 
                               id={`pos${index}`}
-                              className={`matrix ${power ? (index === activeIndex ? "pwr-on" : "") : (index === activeIndex ? "off" : "")}`}
+                              className={`button matrix ${power ? (index === activeIndex ? "pwr-on" : "") : (index === activeIndex ? "off" : "")}`}
                               onClick={(e) => handleSelected(e)}
                               >{channel.ch}</span>
                           );
@@ -225,9 +228,9 @@ const Projects = () => {
               <div id="power-control-container">
                 <div id="switch-light-container">
                   <div id="power-switch-container">
-                      <span id="on-btn" className="pwr-on" onClick={(e) => powerOnOff(e)}>I</span>
-                      <span id="off-btn" onClick={(e) => powerOnOff(e)}>O</span>
-                      <span id="sound-btn" className={sound ? (power ? "pwr-on" : "off") : ""} onClick={() => soundOnOff()}>🕪</span>
+                      <span id="on-btn" className="button pwr-on" onClick={(e) => powerOnOff(e)}>I</span>
+                      <span id="off-btn" className="button" onClick={(e) => powerOnOff(e)}>O</span>
+                      <span id="sound-btn" className={`button ${sound ? (power ? "pwr-on" : "off") : ""}`} onClick={() => soundOnOff()}>🕪</span>
                   </div>
                   <div id="power-light-container">
                     <div id="power-light" className={power ? "pwr-on" : ""}>
