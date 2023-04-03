@@ -95,6 +95,26 @@
           "webaudio": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
         }
       ]
+    },
+    {
+      "id": 2,
+      "title": "Cheekers",
+      "category": "games",
+      "img": "../../public/cheekers_demo.gif",
+      "description": "",
+      "tools": [
+        "React.js",
+        "Web Sockets",
+        "Ruby",
+        "Rails",
+        "CSS"
+      ],
+      "links": [
+        {
+          "github": "https://github.com/tdep/Sequinzer-6001-2a",
+          "webaudio": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
+        }
+      ]
     }
   ],
   "contact": [

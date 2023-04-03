@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Carousel, { CarouselItem } from "../components/Carousel"
 
 const Projects = () => {
-  let channels = [{ch: "auto"}, {ch: "1"}, {ch: "2"}]
+  let channels = [{ch: "auto"}, {ch: "1"}, {ch: "2"}, {ch: "3"}]
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
   const [power, setPower] = useState(true)
@@ -47,6 +47,7 @@ const Projects = () => {
     const interval = setInterval(() => {
       if (autoScroll) {
         updateIndex(activeIndex + 1);
+        console.log(projects[activeIndex])
       }
     }, 5000);
 
@@ -70,6 +71,7 @@ const Projects = () => {
     } else {
       ch.className = ""
     }
+    console.log(activeIndex)
     
     // let handle = document.getElementById("handle")
     // let channel = document.getElementById(`${channels[activeIndex]}`)

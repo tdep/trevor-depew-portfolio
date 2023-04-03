@@ -560,7 +560,11 @@ a {
 }
 
 #pos2 {
-  transform: translate(-1vw, -3vw);
+  transform: translate(-1vw, -2vw);
+}
+
+#pos3 {
+  transform: translate(2vh, -8vh);
 }
 
 #selector-container {
