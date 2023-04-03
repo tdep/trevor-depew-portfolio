@@ -542,6 +542,7 @@ a {
 }
 
 #channel-btn-container span {
+  user-select: none;
   font-size: 20px;
   border-radius:3px;
   width: 28%;

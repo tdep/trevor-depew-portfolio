@@ -61,7 +61,6 @@ const Projects = () => {
   }
 
   // handle iterating through projects
-
   function updateIndex(newIndex) {
     if (newIndex < 0) {
       newIndex = channels.length - 1;
@@ -87,47 +86,39 @@ const Projects = () => {
     };
   });
 
-  function handleAutoScroll(e) {
+  // handle auto-scroll toggle
+  function handleAutoScroll() {
     let auto = document.getElementById("auto-scroll")
+    if (auto.className != "active") {
+      setAutoScroll(true)
+      auto.className = "active"
+    } else {
+      setAutoScroll(false)
+      auto.className = ""
+    }
   }
 
-  
-  function handleSelector() {
-    // prevState
-    let ch = document.getElementById(`pos${activeIndex}`)
-    updateIndex(activeIndex + 1)    
-    if (channels[activeIndex].ch === "auto") {
-      setAutoScroll(true)
-      ch.className = "active"
-    } else if (channels[activeIndex].ch === `${activeIndex}`) {
+  // iteration handler
+  function handleIteration(direction) {
+    if (direction === "prev") {
+      updateIndex(activeIndex -1)
+    } else if (direction === "next") {
+      updateIndex(activeIndex +1)
+    }
+  }
+
+  // handle iterator buttons
+  function handlePrevNext(e) {
+    let auto = document.getElementById("auto-scroll")
+    let direction = e.target.id
+    if (auto.className === "active") {
+      auto.className = ""
       setAutoScroll(false)
-      ch.className = "active"
+      handleIteration(direction)
     } else {
-      ch.className = ""
+      handleIteration(direction)
     }
     console.log(activeIndex)
-    
-    // let handle = document.getElementById("handle")
-    // let channel = document.getElementById(`${channels[activeIndex]}`)
-    // if (activeIndex == channels.length - 1) {
-    //   setDegree(0)
-    //   handle.style.rotate = `${degree}deg`
-    //   setActiveIndex(0)
-    //   if (channel.id == channels[activeIndex]) {
-    //     channel.style.color = "#ffc400"
-    //   } else {
-    //     channel.style.color = "0f0f0f"
-    //   }
-    // } else {
-    //   setDegree(degree + 35)
-    //   handle.style.rotate = `${degree}deg`
-    //   setActiveIndex(activeIndex + 1)
-    //   if (channel.id == channels[activeIndex]) {
-    //     channel.style.color = "#ffc400"
-    //   } else {
-    //     channel.style.color = "0f0f0f"
-    //   }
-    // }
   }
 
   if (loading) {
@@ -158,9 +149,9 @@ const Projects = () => {
                 {/* <h1 id="selector-label">Ch.</h1> */}
                 <div id="selector-container">
                   <div id="channel-btn-container">
-                    <span>Prev</span>
-                    <span id="auto-scroll" className="active" onClick={(e)=>handleAutoScroll(e)}>Auto</span>
-                    <span>Next</span>
+                    <span id="prev" onClick={(e) => handlePrevNext(e)}>Prev</span>
+                    <span id="auto-scroll" className="active" onClick={() => handleAutoScroll()}>Auto</span>
+                    <span id="next" onClick={(e) => handlePrevNext(e)}>Next</span>
                   </div>
                   <div id="indicator-container">
                     <div id="indicators">
