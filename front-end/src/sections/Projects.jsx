@@ -148,12 +148,14 @@ const Projects = () => {
                 </div>
               </div>
               <div id="power-control-container">
-                <h1 id="power-label">PWR</h1>
+                {/* <h1 id="power-label">PWR</h1> */}
                 <div id="switch-light-container">
                   <div id="power-switch-container">
                     <label className="switch" id="power-switch">
-                      <input type="checkbox" id="on-off" onClick={(e) => powerOnOff(e)} defaultChecked></input>
-                      <span className="slider"></span>
+                      <span>{'\&'}</span>
+                      <span></span>
+                      {/* <input type="checkbox" id="on-off" onClick={(e) => powerOnOff(e)} defaultChecked></input> */}
+                      {/* <span className="slider"></span> */}
                     </label>
                   </div>
                   <div id="power-light-container">
