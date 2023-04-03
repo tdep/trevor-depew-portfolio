@@ -11,6 +11,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
   const [power, setPower] = useState(true)
+  const [sound, setSound] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
   const [autoScroll, setAutoScroll] = useState(true)
 
@@ -63,9 +64,11 @@ const Projects = () => {
       setAutoScroll(true)
     }
   }
+
   // handle power-down of viewer
   function powerDown(activeElements) {
     for (let element of activeElements) {
+      console.log(element)
       element.className = "off"
     }
     if (autoScroll) {
@@ -76,12 +79,18 @@ const Projects = () => {
   // handle sound button
   function soundOnOff() {
     let sound = document.getElementById("sound-btn")
-    if (sound.className != "pwr-on") {
-      sound.className = "pwr-on"
-      // add sound unmute for video
+    if (power) {
+      if (sound.className != "pwr-on") {
+        sound.className = "pwr-on"
+        setSound(true)
+        // add sound unmute for video
+      } else {
+        sound.className = ""
+        setSound(false)
+        // add sound mute for video
+      }
     } else {
-      sound.className = ""
-      // add sound mute for video
+      return
     }
   }
 
@@ -201,7 +210,7 @@ const Projects = () => {
                   <div id="power-switch-container">
                       <span id="on-btn" className="pwr-on" onClick={(e) => powerOnOff(e)}>I</span>
                       <span id="off-btn" onClick={(e) => powerOnOff(e)}>O</span>
-                      <span id="sound-btn" onClick={() => soundOnOff()}>🕪</span>
+                      <span id="sound-btn" className={sound ? (power ? "pwr-on" : "off") : ""} onClick={() => soundOnOff()}>🕪</span>
                   </div>
                   <div id="power-light-container">
                     <div id="power-light" className={power ? "pwr-on" : ""}>

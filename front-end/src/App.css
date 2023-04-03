@@ -626,10 +626,10 @@ a {
   box-shadow:
     0px 0px 1px #c89a02 inset,
     0px 0px 1px #c89a02 inset,
-    0px 0px 0px #554100,
-    0px 0px 4px #f8cf49,
-    0px 0px 4px #f8cf49,
-    0px 0px 2px #f8cf49;
+    1px -1px 1px #554100,
+    0px 0px 0px #f8cf49,
+    0px 0px 0px #f8cf49,
+    0px 0px 0px #f8cf49;
 }
 
 #power-control-container {
@@ -782,6 +782,20 @@ a {
     0px -3px 4px #f8cf49,
     -1px 0px 4px #f8cf49,
     1px 1px 2px #f8cf49;
+}
+
+#sound-btn.off {
+  user-select: none;
+  position: relative;
+  top: 4px;
+  background-color: #a98202;
+  box-shadow:
+    0px 0px 1px #c89a02 inset,
+    0px 0px 1px #c89a02 inset,
+    0px 0px 0px #554100,
+    0px 0px 0px #f8cf49,
+    0px 0px 0px #f8cf49,
+    0px 0px 0px #f8cf49;
 }
 
 #power-light-container {
