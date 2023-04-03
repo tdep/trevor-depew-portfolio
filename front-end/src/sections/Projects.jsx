@@ -149,14 +149,21 @@ const Projects = () => {
   function handlePrevNext(e) {
     // let auto = document.getElementById("auto-scroll")
     let direction = e.target.id
-    if (auto.className === "pwr-on") {
-      auto.className = ""
-      setAutoScroll(false)
-      handleIteration(direction)
-    } else {
-      handleIteration(direction)
+    if (power) {
+      if (auto.className === "pwr-on") {
+        auto.className = ""
+        setAutoScroll(false)
+        handleIteration(direction)
+      } else {
+        handleIteration(direction)
+      }
+      console.log(activeIndex)
     }
-    console.log(activeIndex)
+  }
+
+  // handle project matrix buttons
+  function handleSelected(e) {
+    // change classname to omit "matrix" and allow buttons to be depressed
   }
 
   if (loading) {
@@ -197,7 +204,8 @@ const Projects = () => {
                           return (
                             <span 
                               id={`pos${index}`}
-                              // className={`${index === activeIndex ? "active" : ""}`}
+                              className={`matrix ${power ? (index === activeIndex ? "pwr-on" : "") : (index === activeIndex ? "off" : "")}`}
+                              onClick={(e) => handleSelected(e)}
                               >{channel.ch}</span>
                           );
                         })}

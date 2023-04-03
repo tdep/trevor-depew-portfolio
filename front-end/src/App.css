@@ -604,18 +604,27 @@ a {
     0px 0px 0px #071702;
 }
 
+
 #selector-container span.pwr-on {
   user-select: none;
   position: relative;
   top: 4px;
   background-color: #ffe21b;
   box-shadow:
-    0px 1px 1px #c89a02 inset,
-    -1px -1px 1px #c89a02 inset,
-    0px 0px 0px #554100,
-    0px -3px 4px #f8cf49,
-    -1px 0px 4px #f8cf49,
-    1px 1px 2px #f8cf49;
+  0px 1px 1px #c89a02 inset,
+  -1px -1px 1px #c89a02 inset,
+  1px -1px 1px #554100,
+  0px -3px 4px #f8cf49,
+  -1px 0px 4px #f8cf49,
+  1px 1px 2px #f8cf49;
+}
+
+#selector-container span.matrix {
+  top: 0px;
+}
+
+#selector-container span.matrix.off {
+  top: 0px;
 }
 
 #selector-container span.off {
