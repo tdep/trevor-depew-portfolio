@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 const Projects = () => {
+  const auto = document.getElementById("auto-scroll")
   let channels = [
     { ch: "1" }, { ch: "2" }, { ch: "3" }, { ch: "" }, { ch: "" },
     { ch: "" }, { ch: "" }, { ch: "" }, { ch: "" }, { ch: "" },
@@ -31,28 +32,52 @@ const Projects = () => {
   // handle power button
   function powerOnOff(e) {
     let on = document.getElementById("on-btn")
+    let inactiveElements = document.getElementsByClassName(" off")
+    let activeElements = document.getElementsByClassName("pwr-on")
     if (e.target.id === "on-btn") {
-      if(on.className != "active"){
-        on.className = "active"
+      if(on.className != "pwr-on"){
+        on.className = "pwr-on"
         setPower(true)
+        powerUp(inactiveElements)
         // add tv on effect for screen
       } else {
         return
       }
     } else if (e.target.id === "off-btn") {
-      if (on.className === "active") {
+      if (on.className === "pwr-on") {
         on.className = "";
         setPower(false)
+        powerDown(activeElements)
         // add tv off effect for screen
       }
+    }
+  }
+
+  // handle power-up of viewer
+  function powerUp(inactiveElements) {
+    for (let element of inactiveElements) {
+      console.log(element)
+      element.className = "pwr-on"
+    }
+    if (auto.className === "pwr-on") {
+      setAutoScroll(true)
+    }
+  }
+  // handle power-down of viewer
+  function powerDown(activeElements) {
+    for (let element of activeElements) {
+      element.className = "off"
+    }
+    if (autoScroll) {
+      setAutoScroll(false)
     }
   }
 
   // handle sound button
   function soundOnOff() {
     let sound = document.getElementById("sound-btn")
-    if (sound.className != "active") {
-      sound.className = "active"
+    if (sound.className != "pwr-on") {
+      sound.className = "pwr-on"
       // add sound unmute for video
     } else {
       sound.className = ""
@@ -88,13 +113,17 @@ const Projects = () => {
 
   // handle auto-scroll toggle
   function handleAutoScroll() {
-    let auto = document.getElementById("auto-scroll")
-    if (auto.className != "active") {
-      setAutoScroll(true)
-      auto.className = "active"
+    // let auto = document.getElementById("auto-scroll")
+    if (power) {
+      if (auto.className != "pwr-on") {
+        setAutoScroll(true)
+        auto.className = "pwr-on"
+      } else {
+        setAutoScroll(false)
+        auto.className = ""
+      }
     } else {
-      setAutoScroll(false)
-      auto.className = ""
+      return
     }
   }
 
@@ -109,9 +138,9 @@ const Projects = () => {
 
   // handle iterator buttons
   function handlePrevNext(e) {
-    let auto = document.getElementById("auto-scroll")
+    // let auto = document.getElementById("auto-scroll")
     let direction = e.target.id
-    if (auto.className === "active") {
+    if (auto.className === "pwr-on") {
       auto.className = ""
       setAutoScroll(false)
       handleIteration(direction)
@@ -150,7 +179,7 @@ const Projects = () => {
                 <div id="selector-container">
                   <div id="channel-btn-container">
                     <span id="prev" onClick={(e) => handlePrevNext(e)}>Prev</span>
-                    <span id="auto-scroll" className="active" onClick={() => handleAutoScroll()}>Auto</span>
+                    <span id="auto-scroll" className="pwr-on" onClick={() => handleAutoScroll()}>Auto</span>
                     <span id="next" onClick={(e) => handlePrevNext(e)}>Next</span>
                   </div>
                   <div id="indicator-container">
@@ -170,12 +199,12 @@ const Projects = () => {
               <div id="power-control-container">
                 <div id="switch-light-container">
                   <div id="power-switch-container">
-                      <span id="on-btn" className="active" onClick={(e) => powerOnOff(e)}>I</span>
+                      <span id="on-btn" className="pwr-on" onClick={(e) => powerOnOff(e)}>I</span>
                       <span id="off-btn" onClick={(e) => powerOnOff(e)}>O</span>
                       <span id="sound-btn" onClick={() => soundOnOff()}>🕪</span>
                   </div>
                   <div id="power-light-container">
-                    <div id="power-light" className={power ? "active" : ""}>
+                    <div id="power-light" className={power ? "pwr-on" : ""}>
                       <div id="middle-ring">
                         <div id="inner-ring"></div>
                       </div>
