@@ -603,7 +603,7 @@ a {
     0px 0px 0px #071702;
 }
 
-#selector-container span:active {
+#selector-container span.active {
   user-select: none;
   position: relative;
   top: 4px;
@@ -689,7 +689,7 @@ a {
     0px 0px 0px #071702;
 }
 
-#on-btn:active {
+#on-btn.active {
   position: relative;
   background-color: #45cd1b;
   top: 4px;
@@ -755,7 +755,7 @@ a {
     0px 0px 0px #071702; 
 }
 
-#sound-btn:active {
+#sound-btn.active {
   user-select: none;
   position: relative;
   top: 4px;

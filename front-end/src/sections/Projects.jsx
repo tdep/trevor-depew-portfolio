@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import Carousel, { CarouselItem } from "../components/Carousel"
 
 const Projects = () => {
   let channels = [
@@ -12,9 +11,9 @@ const Projects = () => {
   const [loading, setLoading] = useState(true)
   const [power, setPower] = useState(true)
   const [activeIndex, setActiveIndex] = useState(0)
-  const [degree, setDegree] = useState(0)
   const [autoScroll, setAutoScroll] = useState(true)
 
+  // fetch projects from the db
   useEffect(() => {
     getProjectData()
   },[])
@@ -29,17 +28,41 @@ const Projects = () => {
     .catch(err => console.log(err))
   }
 
+  // handle power button
   function powerOnOff(e) {
-    let powerOn = e.target.checked
-    if (powerOn) {
-      setPower(true)
-    } else if (!powerOn) {
-      setPower(false)
+    let on = document.getElementById("on-btn")
+    if (e.target.id === "on-btn") {
+      if(on.className != "active"){
+        on.className = "active"
+        setPower(true)
+        // add tv on effect for screen
+      } else {
+        return
+      }
+    } else if (e.target.id === "off-btn") {
+      if (on.className === "active") {
+        on.className = "";
+        setPower(false)
+        // add tv off effect for screen
+      }
     }
-    console.log(power)
   }
 
-  const updateIndex = (newIndex) => {
+  // handle sound button
+  function soundOnOff() {
+    let sound = document.getElementById("sound-btn")
+    if (sound.className != "active") {
+      sound.className = "active"
+      // add sound unmute for video
+    } else {
+      sound.className = ""
+      // add sound mute for video
+    }
+  }
+
+  // handle iterating through projects
+
+  function updateIndex(newIndex) {
     if (newIndex < 0) {
       newIndex = channels.length - 1;
     } else if (newIndex >= channels.length) {
@@ -48,6 +71,7 @@ const Projects = () => {
     setActiveIndex(newIndex)
   }
   
+  // handle auto scroll timing for projects
   useEffect(() => {
     const interval = setInterval(() => {
       if (autoScroll) {
@@ -62,6 +86,11 @@ const Projects = () => {
       }
     };
   });
+
+  function handleAutoScroll(e) {
+    let auto = document.getElementById("auto-scroll")
+  }
+
   
   function handleSelector() {
     // prevState
@@ -130,7 +159,7 @@ const Projects = () => {
                 <div id="selector-container">
                   <div id="channel-btn-container">
                     <span>Prev</span>
-                    <span>Auto</span>
+                    <span id="auto-scroll" className="active" onClick={(e)=>handleAutoScroll(e)}>Auto</span>
                     <span>Next</span>
                   </div>
                   <div id="indicator-container">
@@ -150,9 +179,9 @@ const Projects = () => {
               <div id="power-control-container">
                 <div id="switch-light-container">
                   <div id="power-switch-container">
-                      <span id="on-btn">I</span>
-                      <span id="off-btn">O</span>
-                      <span id="sound-btn">🕪</span>
+                      <span id="on-btn" className="active" onClick={(e) => powerOnOff(e)}>I</span>
+                      <span id="off-btn" onClick={(e) => powerOnOff(e)}>O</span>
+                      <span id="sound-btn" onClick={() => soundOnOff()}>🕪</span>
                   </div>
                   <div id="power-light-container">
                     <div id="power-light" className={power ? "active" : ""}>
@@ -192,20 +221,7 @@ const Projects = () => {
               </div>
             </div>
           </div>
-
         </div>
-        {/* <Carousel>
-        <CarouselItem>
-          <TadLab />
-        </CarouselItem>
-        <CarouselItem>
-          <Sequinzer />
-        </CarouselItem>
-        <CarouselItem>
-          <Cheekers />
-        </CarouselItem>
-      </Carousel> */}
-
       </div>
     )
   }
