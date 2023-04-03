@@ -2,7 +2,12 @@ import { useEffect, useState } from "react"
 import Carousel, { CarouselItem } from "../components/Carousel"
 
 const Projects = () => {
-  let channels = [{ch: "auto"}, {ch: "1"}, {ch: "2"}, {ch: "3"}]
+  let channels = [
+    { ch: "1" }, { ch: "2" }, { ch: "3" }, { ch: "" }, { ch: "" },
+    { ch: "" }, { ch: "" }, { ch: "" }, { ch: "" }, { ch: "" },
+    { ch: "" }, { ch: "" }, { ch: "" }, { ch: "" }, { ch: "" },
+    { ch: "" }, { ch: "" }, { ch: "" }, { ch: "" }, { ch: "" }
+  ]
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
   const [power, setPower] = useState(true)
@@ -123,23 +128,21 @@ const Projects = () => {
               <div id="selector-indicator-container">
                 <h1 id="selector-label">Ch.</h1>
                 <div id="selector-container">
-                  <div id="selector-container">
-                  <div id="indicator">
-                    <h1 id="indicator-labels">
-                      {channels.map((channel, index) => {
-                        return (
-                          <span 
-                            id={`pos${index}`}
-                            // className={`${index === activeIndex ? "active" : ""}`}
-                            >{channel.ch}</span>
-                        );
-                      })}
-                    </h1>
+                  <div id="channel-btn-container">
+                    <span>Prev</span>
+                    <span>Auto</span>
+                    <span>Next</span>
                   </div>
-                    <div id="selector" onClick={(e) => handleSelector(e)}>
-                      <div id="handle">
-                        ^
-                      </div>
+                  <div id="indicator-container">
+                    <div id="indicators">
+                        {channels.map((channel, index) => {
+                          return (
+                            <span 
+                              id={`pos${index}`}
+                              // className={`${index === activeIndex ? "active" : ""}`}
+                              >{channel.ch}</span>
+                          );
+                        })}
                     </div>
                   </div>
                 </div>

@@ -526,84 +526,79 @@ a {
 }
 
 #selector-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 85%;
 }
 
-#indicator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#indicator-labels span {
-  position: absolute;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2vh;
-  height: 10vh;
-  width: 20px;
-  /* left: 0;
-  top: 0; */
-  transform-origin: bottom center;
-}
-
-#indicator-labels span.active {
-  color: #ffc400;
-}
-
-#pos0 {
-  transform: translate(-2vw, 2vw); 
-}
-
-#pos1 {
-  transform: translate(-2vw, -1vh);
-}
-
-#pos2 {
-  transform: translate(-1vw, -2vw);
-}
-
-#pos3 {
-  transform: translate(2vh, -8vh);
-}
-
-#selector-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#selector {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 5vw;
-  height: 5vw;
+#selector-container span:hover {
+  background-color: #ffc400;
+  opacity: 80%;
   cursor: pointer;
-  box-shadow: 
-    -2px 0px 2px #bbb inset,
-    3px 0px 2px #272626 inset,
-    -7px 0px 2px #272626;
-  /* border: 1px solid #484545; */
-  border-radius: 50%;
-  background: #bab2b2;
-  rotate: -125deg;
+  box-shadow:
+    1px 1px 1px #bbb inset,
+    -1px -1px 1px #6a6a6a inset,
+    0px 3px 0px #554100,
+    0px 0px 4px #071702;
+
 }
 
-#handle {
-  position: absolute;
-  font-weight: bold;
-  font-size: 1vw;
-  width: 15%;
-  height: 100%;
-  box-shadow:
-    1px 0px 0px #bbb,
-    -1px 0px 2px #bbb inset,
-    -4px 0px 4px #272626;
+#channel-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 5%;
+  margin: 20px 0 20px 0;
+}
+
+#channel-btn-container span {
+  font-size: 20px;
+  border: 1px solid #6a6046;
+  border-radius:3px;
+  width: 28%;
+  height: fit-content;
   text-align: center;
-  border-radius: 0.2em;
-  background: #969090
+  background-color: #bba782;
+  box-shadow: 
+  1px 1px 1px #bbb inset,
+  -1px -1px 1px #6a6a6a inset,
+  0px 3px 0px #554100,
+  0px 4px 4px #071702;
+}
+
+#indicator-container {
+  width: 98%;
+  height: 98%;
+  padding: 2px;
+  margin: 2px;
+}
+
+#indicators {
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(4, 25%);
+  height: 100%;
+
+}
+
+#indicators span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+  border: 1px solid #6a6046;
+  border-radius: 2px;
+  background-color: #bba782;
+  box-shadow:
+    0px 3px 0px #554100,
+    0px 4px 4px #071702;
+}
+
+#indicators span.active {
+  color: #ffc400;
 }
 
 #power-control-container {
