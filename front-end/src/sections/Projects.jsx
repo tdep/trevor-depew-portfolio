@@ -36,10 +36,10 @@ const Projects = () => {
   function powerOnOff(e) {
     let on = document.getElementById("on-btn")
     let inactiveElements = document.getElementsByClassName(" off")
-    let activeElements = document.getElementsByClassName("pwr-on")
+    let activeElements = document.getElementsByClassName(" pwr-on")
     if (e.target.id === "on-btn") {
-      if(on.className != "pwr-on"){
-        on.className = "pwr-on"
+      if(on.className != "button power-toggle pwr-on"){
+        on.className = "button power-toggle pwr-on"
         setPower(true)
         powerUp(inactiveElements)
         // add tv on effect for screen
@@ -47,8 +47,8 @@ const Projects = () => {
         return
       }
     } else if (e.target.id === "off-btn") {
-      if (on.className === "pwr-on") {
-        on.className = "";
+      if (on.className === "button power-toggle pwr-on") {
+        on.className = "button power-toggle";
         setPower(false)
         powerDown(activeElements)
         // add tv off effect for screen
@@ -60,9 +60,9 @@ const Projects = () => {
   function powerUp(inactiveElements) {
     for (let element of inactiveElements) {
       console.log(element)
-      element.className = "pwr-on"
+      element.className = "button pwr-on"
     }
-    if (auto.className === "pwr-on") {
+    if (auto.className === "button pwr-on") {
       setAutoScroll(true)
     }
   }
@@ -71,7 +71,7 @@ const Projects = () => {
   function powerDown(activeElements) {
     for (let element of activeElements) {
       console.log(element)
-      element.className = "off"
+      element.className = "button off"
     }
     if (autoScroll) {
       setAutoScroll(false)
@@ -82,12 +82,12 @@ const Projects = () => {
   function soundOnOff() {
     let sound = document.getElementById("sound-btn")
     if (power) {
-      if (sound.className != "pwr-on") {
-        sound.className = "pwr-on"
+      if (sound.className != "button power-toggle pwr-on") {
+        sound.className = "button power-toggle pwr-on"
         setSound(true)
         // add sound unmute for video
       } else {
-        sound.className = ""
+        sound.className = "button power-toggle"
         setSound(false)
         // add sound mute for video
       }
@@ -126,12 +126,12 @@ const Projects = () => {
   function handleAutoScroll() {
     // let auto = document.getElementById("auto-scroll")
     if (power) {
-      if (auto.className != "pwr-on") {
+      if (auto.className != "button pwr-on") {
         setAutoScroll(true)
-        auto.className = "pwr-on"
+        auto.className = "button pwr-on"
       } else {
         setAutoScroll(false)
-        auto.className = ""
+        auto.className = "button"
       }
     } else {
       return
@@ -228,9 +228,9 @@ const Projects = () => {
               <div id="power-control-container">
                 <div id="switch-light-container">
                   <div id="power-switch-container">
-                      <span id="on-btn" className="button pwr-on" onClick={(e) => powerOnOff(e)}>I</span>
-                      <span id="off-btn" className="button" onClick={(e) => powerOnOff(e)}>O</span>
-                      <span id="sound-btn" className={`button ${sound ? (power ? "pwr-on" : "off") : ""}`} onClick={() => soundOnOff()}>🕪</span>
+                      <span id="on-btn" className="button power-toggle pwr-on" onClick={(e) => powerOnOff(e)}>I</span>
+                      <span id="off-btn" className="button power-toggle" onClick={(e) => powerOnOff(e)}>O</span>
+                      <span id="sound-btn" className={`${sound ? (power ? "button power-toggle pwr-on" : "button power-toggle off") : "button power-toggle"}`} onClick={() => soundOnOff()}>🕪</span>
                   </div>
                   <div id="power-light-container">
                     <div id="power-light" className={power ? "pwr-on" : ""}>
