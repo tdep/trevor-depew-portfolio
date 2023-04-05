@@ -152,8 +152,8 @@ const Projects = () => {
     // let auto = document.getElementById("auto-scroll")
     let direction = e.target.id
     if (power) {
-      if (auto.className === "pwr-on") {
-        auto.className = ""
+      if (auto.className === "button pwr-on") {
+        auto.className = "button"
         setAutoScroll(false)
         handleIteration(direction)
       } else {
@@ -170,9 +170,8 @@ const Projects = () => {
       return
     } else {
       setAutoScroll(false)
-      auto.className = ""
+      auto.className = "button"
       setActiveIndex(selectedIndex)
-      e.target.style.top = "4px"
       console.log(selectedIndex)
     }
     // change classname to omit "matrix" and allow buttons to be depressed
