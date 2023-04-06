@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import "../styling/projects.css"
+import "../styling/viewer.css"
+import "../styling/projectData.css"
 import "../styling/buttons.css"
 
 const Projects = () => {
@@ -182,16 +184,17 @@ const Projects = () => {
   } else {
     return (
       <div id="projects-container">
-        <div id="chasis">
+        <div id="chasis" className="external-container-shadows">
           <div id="screen-container">
             <div id="bar-top" className="black-bar">
               <div id="screen">
                 <img 
-                  src={projects[0].img}
+                  src={projects[activeIndex].img}
                   style={{
-                    width: "100%",
+                    width: "99%",
                     height: "70%",
-                    borderRadius: "1%"}}
+                    borderRadius: "1%"
+                  }}
                   />
                 <div id="image-efx"></div>
                 <div id="screen-efx"></div>
@@ -199,8 +202,8 @@ const Projects = () => {
               </div>
             </div>
           </div>
-          <div id="control-panel-container">
-            <div id="control-panel">
+          <div id="control-panel-container" className="internal-container-shadows">
+            <div id="control-panel" className="panel-shadows">
               <div id="selector-indicator-container">
                 {/* <h1 id="selector-label">Ch.</h1> */}
                 <div id="selector-container">
@@ -241,19 +244,19 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-            <div id="text-container">
+            <div id="text-container" className="panel-shadows text-container-shadows text-styling">
               <div id="description-container">
-                <div id="title">
-                  <h1>{projects[0].title}</h1>
+                <div id="title" className="internal-text-container-shadows">
+                  <h1>{projects[activeIndex].title}</h1>
                 </div>
-                <div id="text">
-                  <p>{projects[0].description}</p>
+                <div id="text" className="internal-text-container-shadows">
+                  <p>{projects[activeIndex].description}</p>
                 </div>
               </div>
               <div id="tool-link-container">
                 <div id="tool-link-1" className="tool-link">
-                  <p>{projects[0].tools.map((tool, i) => {
-                    if (i == (projects[0].tools.length) -1) {
+                  <p>{projects[activeIndex].tools.map((tool, i) => {
+                    if (i == (projects[activeIndex].tools.length) -1) {
                       return (tool)
                     } else {
                       return (`${tool}, `)
@@ -261,10 +264,10 @@ const Projects = () => {
                   })}</p>
                 </div>
                 <div id="tool-link-2" className="tool-link">
-                  <a href={`${projects[0].links.github}`}>GitHub Repository</a>
+                  <a href={`${projects[activeIndex].links[0].url}`}>{projects[activeIndex].links[0].type}</a>
                 </div>
                 <div id="tool-link-3" className="tool-link">
-                  <a href={`${projects[0].links.tonejs}`}>Tone.js API</a>
+                  <a href={`${projects[activeIndex].links[1].url}`}>{projects[activeIndex].links[1].type}</a>
                 </div>
               </div>
             </div>

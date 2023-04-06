@@ -68,31 +68,42 @@
       "title": "TadLab",
       "category": "music",
       "img": "../../public/tadlab_demo.gif",
+      "edgeColor":"556b2f",
       "description": "An in-browser software synthesizer controlled with the mouse and keyboard that is capable of producing polyphonic sounds, and effects.",
       "tools": ["React.js", "Tone.js", "Ruby on Rails", "CSS"],
-      "links":
+      "links": [
         {
-        "github": "https://github.com/tdep/tadlab",
-        "tonejs": "https://tonejs.github.io/"
+          "type": "Github Repository",
+          "url": "https://github.com/tdep/tadlab"
+        },
+        {
+          "type": "Tone.js",
+          "url": "https://tonejs.github.io/"
         }
+      ]
     },
     {
       "id": 2,
       "title": "Sequinzer 6001-2a",
       "category": "music",
       "img": "../../public/sequinzer_demo.gif",
-      "description": "",
+      "edgeColor": "000",
+      "description": "This is a Flatiron School Software Engineering project for phase 2 featuring React.js and Tone.js to create a software instrument capable of receiving a set pattern and playing it back to the user.",
       "tools": [
         "React.js",
-        "WebAudio API",
+        "Web Audio API",
         "Ruby",
         "Rails",
         "CSS"
       ],
       "links": [
         {
-          "github": "https://github.com/tdep/Sequinzer-6001-2a",
-          "webaudio": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
+          "type": "Github Repository",
+          "url": "https://github.com/tdep/Sequinzer-6001-2a"
+        },
+        {
+          "type": "Web Audio API",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
         }
       ]
     },
@@ -100,8 +111,9 @@
       "id": 2,
       "title": "Cheekers",
       "category": "games",
-      "img": "../../public/cheekers_demo.gif",
-      "description": "",
+      "img": "../../public/cheekers_demo.png",
+      "edgeColor": "0px 5px 4px 0px b3cf9c",
+      "description": "Cheekers is an attempt to build a Checkers type game using React and Ruby on Rails. It was a project by Cooper Hall and Trevor DePew for Flatiron School Software Engineering program phase-3.",
       "tools": [
         "React.js",
         "Web Sockets",
@@ -111,15 +123,23 @@
       ],
       "links": [
         {
-          "github": "https://github.com/tdep/Sequinzer-6001-2a",
-          "webaudio": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
+          "type": "Github Repository",
+          "url": "https://github.com/tdep/Cheekers"
+        },
+        {
+          "type": "WebSocket API",
+          "url": "https://websockets.readthedocs.io/en/stable/"
         }
       ]
     }
   ],
-  "contact": [
-
-  ],
+  "contact": {
+    "github": "https://github.com/tdep",
+    "linkedin": "https://www.linkedin.com/in/trevor-depew/",
+    "huntr": "https://huntr.co/p/trevor-depew",
+    "musicsite": "https://tadepewmusic.com/",
+    "youtube": "Coming Soon!"
+  },
   "blogs": [
 
   ]
