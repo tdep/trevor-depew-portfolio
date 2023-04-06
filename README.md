@@ -12,3 +12,6 @@ The front-end is constructed entirely from the ground up using react.js and vani
 There is a small json file hosting the data to populate the site, but that will change.
 
 More to come!
+
+      Frictioned scrolling to denote each section
+      Sticky nav header after leaving home section
