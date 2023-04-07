@@ -1,12 +1,13 @@
 /* All of the styling for the data that populates the viewer */
 
 .tool-link {
-  height: 20%;
+  height: fit-content;
   background: #0f0f0f;
   border: 1px solid #1a1919;
   border-radius: 1vh;
-  padding-left: 1vh;
-  padding-top: 1vh;
+  padding: 1vh 0 1vh 1vh;
+  /* padding-left: 1vh; */
+  /* padding-top: 1vh; */
   box-shadow:
     5px 0px 5px #0f3005 inset,
     0px 5px 5px #0f3005 inset,
@@ -16,12 +17,14 @@
 
 .tool-link p {
   width: 88%;
+  padding: 10px auto 10px auto;
 }
 
 .tool-link a {
   width: 88%;
   color: #4fff19;
   text-decoration: none;
+  padding: 10px auto 10px auto;
 }
 
 .tool-link a:hover {
@@ -31,6 +34,7 @@
     0px 5px 5px #554100,
     -5px 0px 5px #554100,
     0px -5px 5px #554100;
+  padding: 10px auto 10px auto;
 }
 
 .black-bar {
@@ -52,6 +56,7 @@
 #text {
   height: 80%;
   padding: 1vh;
+  border-radius: 0 0 10px 10px;
 }
 
 #text p {
@@ -125,7 +130,7 @@
   display: flex;
   flex-direction: column;
   width: 95%;
-  height: 40%;
+  height: 60%;
   background: #0f0f0f;
   border: 1px solid #1a1919;
   border-radius: 1vh;
