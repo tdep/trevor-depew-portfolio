@@ -15,9 +15,9 @@ The site is hosted via GitHub Pages here: https://www.trevordepew.com
 
 To run locally:
 
-In ./db run `json-server --watch data.json`
+In `./db` run `json-server --watch data.json`
 
-Then in ./front-end run `npm ci run dev`
+Then in `./front-end` run `npm ci run dev`
 
 More to come!
 
