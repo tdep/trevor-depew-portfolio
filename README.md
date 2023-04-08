@@ -11,6 +11,14 @@ The front-end is constructed entirely from the ground up using react.js and vani
 
 There is a small json file hosting the data to populate the site, but that will change.
 
+The site is hosted via GitHub Pages here: https://www.trevordepew.com
+
+To run locally:
+
+In ./db run 'json-server --watch data.json'
+
+Then in ./front-end run npm ci run dev
+
 More to come!
 
       Frictioned scrolling to denote each section
