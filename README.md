@@ -1,6 +1,8 @@
 # README
 ## Portfolio Website
 
+# Outdated - go to https://github.com/tdep/portfolio-site-v2
+
 This is a small portfolio website that I am creating to host a number of projects I want to complete, but also demonstrate my experience and skills.
 
 It will be deployed shortly and the link will be included here.
@@ -11,7 +13,7 @@ The front-end is constructed entirely from the ground up using react.js and vani
 
 There is a small json file hosting the data to populate the site, but that will change.
 
-The site is hosted via GitHub Pages here: https://www.trevordepew.com
+The site was hosted via GitHub Pages here but is now hosted through Firebase: https://www.trevordepew.com
 
 To run locally:
 
